@@ -5,3 +5,7 @@ def current_user
     return nil
   end
 end
+
+def same_user?(user)
+  return (current_user) && (current_user.id == user.id)
+end
