@@ -1,0 +1,1 @@
+MVC Skeleton for Sinatra with User Auth Model

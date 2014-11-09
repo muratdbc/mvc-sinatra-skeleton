@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/application.css">
+  <!-- Load Vollkorn font -->
+  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+  <title>MVC Skeleton</title>
+</head>
+<body>
+    <header></header>
+
+    <%= erb :_top_nav %>
+
+    <div class="jumbotron">
+      <%= erb :"auth/login" %>
+      <%= erb :"auth/signup" %>
+      <div class="welcome">
+        <% if current_user %>
+          <p>Hello! <%= current_user.username %></p>
+        <% end %>
+          <p>Welcome</p>
+      </div>
+      <%= yield %>
+    </div>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  <script src="/js/application.js"></script>
+</body>
+</html>
