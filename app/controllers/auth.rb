@@ -9,7 +9,7 @@ post '/signup' do
     session[:user_id] = new_user.id
     redirect '/'
   else
-    set_error("Please enter valid password/username.")
+    set_error(user.errors.full_message)
     redirect '/signup'
   end
 end
@@ -25,7 +25,7 @@ post '/login' do
     session[:user_id] = user.id unless user.nil?
     redirect '/'
   else
-    set_error("Log in failed: check username/password")
+    set_error(user.errors.full_message)
     redirect '/login'
   end
 
