@@ -9,19 +9,12 @@
   <title>MVC Skeleton</title>
 </head>
 <body>
-    <header></header>
-
-    <%= erb :_top_nav %>
-
+    <header>
+      <%= erb :welcome %>
+    </header>
     <div class="jumbotron">
       <%= erb :"auth/login" %>
       <%= erb :"auth/signup" %>
-      <div class="welcome">
-        <% if current_user %>
-          <p>Hello! <%= current_user.username %></p>
-        <% end %>
-          <p>Welcome</p>
-      </div>
       <%= yield %>
     </div>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

@@ -1,0 +1,14 @@
+<div class="well">
+  <%= erb :_top_nav %>
+  <div class="welcome">
+    <% if session[:error] %>
+      <p><%= display_error %></p>
+    <% end %>
+
+    <% if current_user %>
+      <p>Hello! <%= current_user.username %></p>
+    <% end %>
+    <p>Welcome</p>
+  </div>
+</div>
+
