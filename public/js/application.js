@@ -1,14 +1,28 @@
 $(document).ready(function() {
-  $('#signup').click(function(event) {
-    event.preventDefault();
+  $('#signup').click(function(e) {
+    e.preventDefault();
     $("#signup-form").toggle();
     $("#login-form").hide();
   });
 
-  $('#login').click(function(event) {
-    event.preventDefault();
+  $('#login').click(function(e) {
+    e.preventDefault();
     $("#login-form").toggle();
     $("#signup-form").hide();
+  });
+
+  $('#logout').click(function(e) {
+    e.preventDefault();
+    console.log(e.target);
+    $link = $(e.target);
+    $.ajax({
+      url: $link.attr('href'),
+      type: 'GET',
+    })
+    .done(function(response) {
+      $('header').replaceWith(response);
+    });
+
   });
 
   $('.cancel-btn').click(function(e) {
