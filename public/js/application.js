@@ -19,8 +19,8 @@ $(document).ready(function() {
       url: $link.attr('href'),
       type: 'GET',
     })
-    .done(function(response) {
-      $('header').replaceWith(response);
+    .done(function(welcomePartical) {
+      $('header').replaceWith(welcomePartical);
     });
 
   });
@@ -38,9 +38,9 @@ $(document).ready(function() {
       type: $form.attr('method'),
       data: $form.serialize(),
     })
-    .done(function(response) {
+    .done(function(welcomePartical) {
       $form.toggle(400);
-      $('header').replaceWith(response);
+      $('header').replaceWith(welcomePartical);
     });
   });
 
@@ -52,9 +52,9 @@ $(document).ready(function() {
       type: $form.attr('method'),
       data: $form.serialize(),
     })
-    .done(function(response) {
+    .done(function(welcomePartical) {
       $form.toggle(400);
-      $('header').replaceWith(response);
+      $('header').replaceWith(welcomePartical);
     });
   });
 });
