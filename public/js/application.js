@@ -11,9 +11,8 @@ $(document).ready(function() {
     $("#signup-form").hide();
   });
 
-  $('#logout').click(function(e) {
+  $('#login-nav').on('click','#logout',function(e) {
     e.preventDefault();
-    console.log(e.target);
     $link = $(e.target);
     $.ajax({
       url: $link.attr('href'),
@@ -22,7 +21,6 @@ $(document).ready(function() {
     .done(function(welcomePartial) {
       $('header').replaceWith(welcomePartial);
     });
-
   });
 
   $('.cancel-btn').click(function(e) {
